@@ -1,0 +1,36 @@
+WORKING_DIR: /scratch/groups/astraigh/minion_seq/cen_pipe/xla_merge_final_SE
+
+trimmomatic_path: /home/groups/astraigh/software/Trimmomatic-0.38/trimmomatic-0.38.jar
+trimmomatic_options: 2:30:12 SLIDINGWINDOW:10:10 MINLEN:71 #options for trimmomatic
+trimfasta: /home/groups/astraigh/software/Trimmomatic-0.38/adapters/alladapters.fa 
+
+
+samples:
+    xla_merge_final:
+        CA:
+            r1: /oak/stanford/groups/astraigh/xenopus_cenpa_chip/xentromere_SE_merge_final/cenpa/cenpa_R1_merge_final.fq.gz
+        INPUT:
+            r1: /oak/stanford/groups/astraigh/xenopus_cenpa_chip/xentromere_SE_merge_final/input/input_R1_merge_final.fq.gz
+        H4:
+            r1: /oak/stanford/groups/astraigh/xenopus_cenpa_chip/xentromere_SE_merge_final/h4/h4_R1_merge_final.fq.gz
+
+your_fav_seqdata:
+    CA_merge_final_SE:
+        fq: /oak/stanford/groups/astraigh/xenopus_cenpa_chip/xentromere_SE_merge_final/cenpa/cenpa_R1_merge_final.fq.gz
+
+
+CIVAL: ["10","100","1000"]
+
+KMER_LENS: ["10","15","20","25"]
+
+NUM_MADS: ["5","10","12","14","15","20","25"]
+
+
+#pairing in brackets needs to be {basename}_{readnum}
+pairing_config:
+   CAoINPUT: ['CA_r1','INPUT_r1']
+   CAoH4: ['CA_r1','H4_r1']
+   H4oINPUT: ['H4_r1','INPUT_r1']
+   # CAr2oINPUTr1: ['CA_r2','INPUT_r1']
+
+MEM: '160G'
