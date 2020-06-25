@@ -1,10 +1,6 @@
 
 This repo contains the pipeline used for data analysis in the paper 'Identification and characterization of centromeric sequences in Xenopus laevis' which can be found at https://www.biorxiv.org/content/10.1101/2020.06.23.167643v1 
 
-For questions regarding data analysis and pipeline contact:
-Owen K. Smith, Charles Limouse, Kelsey A. Fryer
-
-
 ###Pipeline Overview:
 
 -Takes unprocessed, zipped fastqs as input. Removes PCR duplicates using clumpify.sh and trims adapters using trimmomatic. 
